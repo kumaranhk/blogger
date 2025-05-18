@@ -30,6 +30,7 @@ const Blogs = ({ type, filter }) => {
   const fetchBlogs = async () => {
     const url = type === "all" ? "/blogs" : "/blogs/my-blogs";
     try {
+      setLoading(true);
       const res = await axios.get(url, {
         params,
       });
